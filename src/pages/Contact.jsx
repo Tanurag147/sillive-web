@@ -35,7 +35,7 @@ export default function Contact() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-                <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY"/>
+                <input type="hidden" name="access_key" value="d83defea-430e-4f1e-a6df-b000e6e115a2"/>
                 <input type="hidden" name="subject" value="New SILLIVE enquiry"/>
                 <div>
                   <label className="text-slate-400 text-sm mb-2 block">Name</label>
