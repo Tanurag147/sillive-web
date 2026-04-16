@@ -64,9 +64,9 @@ export default function ForSCs() {
                 <span className="bg-teal-600/20 text-teal-400 text-xs px-2 py-1 rounded-full">Live</span>
               </div>
               <div className="space-y-3">
-                {[['Morning shift', 'Alex Sanya', 'good', '06:00–14:00'],
-                  ['Afternoon shift', 'Gurpreet Singh', 'neutral', '14:00–22:00'],
-                  ['Night shift', 'Raj Napit', 'good', '22:00–06:00']].map(([shift, worker, mood, time]) => (
+                {[['Morning shift', 'Alex', 'good', '06:00–14:00'],
+                  ['Afternoon shift', 'Gurpreet', 'neutral', '14:00–22:00'],
+                  ['Night shift', 'Raj', 'good', '22:00–06:00']].map(([shift, worker, mood, time]) => (
                   <div key={shift} className="bg-slate-800 rounded-xl px-4 py-3 flex items-center justify-between">
                     <div>
                       <p className="text-white text-xs font-medium">{shift}</p>

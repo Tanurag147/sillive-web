@@ -66,7 +66,7 @@ export default function Home() {
       <AnimatedSection>
         <div className="max-w-6xl mx-auto px-6 py-8">
           <div className="grid grid-cols-3 gap-4 border border-white/5 rounded-2xl p-6 bg-slate-900/50">
-            {[['2', 'Active participants'], ['7', 'Support workers'], ['Live', 'Since April 2026']].map(([val, label]) => (
+            {[['3+', 'Active participants'], ['12+', 'Support workers'], ['Live', 'Since April 2026']].map(([val, label]) => (
               <div key={label} className="text-center">
                 <p className="font-display text-3xl font-bold text-teal-400">{val}</p>
                 <p className="text-slate-500 text-sm mt-1">{label}</p>
@@ -139,7 +139,7 @@ export default function Home() {
             <div className="bg-slate-900 border border-white/5 rounded-2xl p-8">
               <p className="text-teal-400 text-sm font-medium mb-2">Caring Hands SA</p>
               <p className="text-white font-display font-bold text-xl mb-3">NDIS Registered SIL Provider</p>
-              <p className="text-slate-400 text-sm leading-relaxed">ABN 23 664 289 892 &middot; Ingle Farm, Adelaide SA &middot; Currently supporting 2 participants with 7 workers &mdash; all running on SILLIVE.</p>
+              <p className="text-slate-400 text-sm leading-relaxed">ABN 23 664 289 892 &middot; Ingle Farm, Adelaide SA &middot; Currently supporting 3+ participants with 12+ workers &mdash; all running on SILLIVE.</p>
             </div>
           </div>
         </AnimatedSection>
