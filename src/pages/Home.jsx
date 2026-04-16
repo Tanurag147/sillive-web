@@ -139,7 +139,7 @@ export default function Home() {
             <div className="bg-slate-900 border border-white/5 rounded-2xl p-8">
               <p className="text-teal-400 text-sm font-medium mb-2">Caring Hands SA</p>
               <p className="text-white font-display font-bold text-xl mb-3">NDIS Registered SIL Provider</p>
-              <p className="text-slate-400 text-sm leading-relaxed">ABN 23 664 289 892 &middot; Ingle Farm, Adelaide SA &middot; Currently supporting 3+ participants with 12+ workers &mdash; all running on SILLIVE.</p>
+              <p className="text-slate-400 text-sm leading-relaxed">ABN 23 664 289 892 &middot; Adelaide SA &middot; Currently supporting 3+ participants with 12+ workers &mdash; all running on SILLIVE.</p>
             </div>
           </div>
         </AnimatedSection>
