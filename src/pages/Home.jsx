@@ -132,7 +132,7 @@ export default function Home() {
             <div>
               <p className="text-teal-400 text-4xl font-display font-bold leading-none mb-6">&ldquo;</p>
               <p className="text-xl text-white leading-relaxed mb-6">
-                I ran a SIL house before I built the software. I know what gets missed at shift handover at 2am.
+                I ran a SIL house before I built the software. I know what gets missed between a shift note and an SC's inbox.
               </p>
               <p className="text-slate-500 text-sm">&mdash; Tanurag Gautam, Founder</p>
             </div>
