@@ -24,7 +24,7 @@ export default function Footer() {
           <div>
             <p className="text-white text-sm font-medium mb-4">Company</p>
             <div className="flex flex-col gap-3">
-              {[['/contact', 'Contact'], ['/contact', 'Book a Demo'], ['/privacy', 'Privacy Policy'], ['/terms', 'Terms of Service']].map(([to, label]) => (
+              {[['/contact', 'Contact'], ['/contact', 'Book a Demo']].map(([to, label]) => (
                 <Link key={label} to={to} className="text-slate-500 hover:text-white text-sm transition-colors">{label}</Link>
               ))}
             </div>

@@ -54,7 +54,7 @@ export default function ForProviders() {
             <p className="text-slate-400 leading-relaxed max-w-2xl mb-6">
               We are not a tech company that guessed at NDIS. We are a registered NDIS SIL provider &mdash; ABN 23 664 289 892 &mdash; that built the tool we needed and opened it to the sector. Every feature was tested in a real SIL house before it shipped.
             </p>
-            <p className="text-slate-600 text-sm">Ingle Farm, Adelaide SA &middot; 2 active participants &middot; 7 support workers</p>
+            <p className="text-slate-600 text-sm">Ingle Farm, Adelaide SA &middot; 3+ active participants &middot; 12+ support workers</p>
           </div>
         </AnimatedSection>
       </section>
