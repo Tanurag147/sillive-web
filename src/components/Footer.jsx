@@ -1,48 +1,64 @@
 import { Link } from 'react-router-dom'
 import Logo from './Logo'
 
+const ORG_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'SILLIVE',
+  url: 'https://sillive.com.au',
+  logo: 'https://sillive.com.au/favicon.svg',
+  email: 'hello@sillive.com.au',
+  description: 'Operations platform for NDIS Supported Independent Living providers.',
+  address: { '@type': 'PostalAddress', addressRegion: 'SA', addressCountry: 'AU' },
+  identifier: { '@type': 'PropertyValue', propertyID: 'ABN', value: '23 664 289 892' },
+}
+
 export default function Footer() {
   return (
-    <footer className="border-t border-white/5 bg-slate-950 mt-24">
-      <div className="max-w-6xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-          <div className="md:col-span-1">
-            <Logo />
-            <p className="text-slate-500 text-sm mt-4 leading-relaxed">
-              Built by an NDIS operator, for NDIS operators.
+    <footer className="border-t border-line bg-cream" role="contentinfo">
+      <div className="max-w-container mx-auto px-5 sm:px-8 py-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+          <div className="col-span-2">
+            <Logo size="md" theme="light" />
+            <p className="mt-4 text-sm text-muted max-w-xs">
+              Clinical plans that actually get implemented. Built inside a real SIL home in Adelaide.
             </p>
-            <p className="text-slate-600 text-xs mt-3">ABN 23 664 289 892</p>
           </div>
           <div>
-            <p className="text-white text-sm font-medium mb-4">Platform</p>
-            <div className="flex flex-col gap-3">
-              {[['/', 'Home'], ['/for-scs', 'For Support Coordinators'], ['/for-providers', 'For Providers'], ['/pricing', 'Pricing']].map(([to, label]) => (
-                <Link key={to} to={to} className="text-slate-500 hover:text-white text-sm transition-colors">{label}</Link>
-              ))}
-            </div>
+            <h4 className="text-sm font-semibold text-forest mb-3 font-body">Product</h4>
+            <ul className="space-y-2 text-sm text-ink">
+              <li><Link to="/pricing">Pricing</Link></li>
+              <li><Link to="/about">About</Link></li>
+              <li><Link to="/blog">Blog</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
+            </ul>
           </div>
           <div>
-            <p className="text-white text-sm font-medium mb-4">Company</p>
-            <div className="flex flex-col gap-3">
-              {[['/contact', 'Contact'], ['/contact', 'Book a Demo']].map(([to, label]) => (
-                <Link key={label} to={to} className="text-slate-500 hover:text-white text-sm transition-colors">{label}</Link>
-              ))}
-            </div>
-          </div>
-          <div>
-            <p className="text-white text-sm font-medium mb-4">Contact</p>
-            <div className="flex flex-col gap-3">
-              <a href="mailto:hello@sillive.com.au" className="text-slate-500 hover:text-teal-400 text-sm transition-colors">hello@sillive.com.au</a>
-              <p className="text-slate-600 text-sm">Adelaide, South Australia</p>
-              <p className="text-slate-600 text-sm">Response within 24 hours</p>
-            </div>
+            <h4 className="text-sm font-semibold text-forest mb-3 font-body">Built for</h4>
+            <ul className="space-y-2 text-sm text-ink">
+              <li><Link to="/sil-software-australia">SIL providers</Link></li>
+              <li><Link to="/support-coordinator-reporting">Support coordinators</Link></li>
+              <li><Link to="/ndis-sil-audit-readiness">Audit readiness</Link></li>
+              <li><Link to="/clinical-plan-implementation">Clinical implementation</Link></li>
+            </ul>
           </div>
         </div>
-        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-slate-600 text-sm">&copy; 2026 SILLIVE &middot; Gautam Aust Pty Ltd &middot; ABN 23 664 289 892</p>
-          <p className="text-slate-600 text-sm">NDIS Registered SIL Provider &middot; Adelaide SA</p>
+
+        <div className="pt-6 border-t border-line flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-sm text-muted">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+            <a href="mailto:hello@sillive.com.au" className="hover:text-forest">hello@sillive.com.au</a>
+            <span aria-hidden="true">·</span>
+            <span>ABN 23 664 289 892</span>
+            <span aria-hidden="true">·</span>
+            <span>© 2026 SILLIVE</span>
+          </div>
+          <span className="inline-flex items-center gap-1.5 text-xs">
+            <span className="w-2 h-2 rounded-full bg-sage" aria-hidden="true"></span>
+            Adelaide, South Australia
+          </span>
         </div>
       </div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG_SCHEMA) }} />
     </footer>
   )
 }

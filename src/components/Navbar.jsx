@@ -1,73 +1,96 @@
 import { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import { motion, AnimatePresence } from 'framer-motion'
+import { Link, NavLink } from 'react-router-dom'
 import Logo from './Logo'
 
+const APP_URL = 'https://app.sillive.com.au'
+
+const NAV = [
+  { to: '/', label: 'Home' },
+  { to: '/pricing', label: 'Pricing' },
+  { to: '/about', label: 'About' },
+  { to: '/blog', label: 'Blog' },
+]
+
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
-  const { pathname } = useLocation()
+  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', fn)
-    return () => window.removeEventListener('scroll', fn)
+    const onScroll = () => setScrolled(window.scrollY > 8)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const links = [
-    { to: '/', label: 'Home' },
-    { to: '/for-scs', label: 'For SCs' },
-    { to: '/for-providers', label: 'For Providers' },
-    { to: '/pricing', label: 'Pricing' },
-    { to: '/contact', label: 'Contact' },
-  ]
+  const closeMenu = () => setOpen(false)
 
   return (
-    <motion.nav initial={{ y: -60, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-slate-950/90 backdrop-blur-md border-b border-white/5' : ''}`}>
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link to="/"><Logo /></Link>
-        <div className="hidden md:flex items-center gap-8">
-          {links.map(l => (
-            <Link key={l.to} to={l.to}
-              className={`text-sm transition-colors ${pathname === l.to ? 'text-teal-400' : 'text-slate-400 hover:text-white'}`}>
-              {l.label}
-            </Link>
+    <header
+      className={`sticky top-0 z-40 w-full transition-colors ${scrolled ? 'bg-cream/90 backdrop-blur border-b border-line' : 'bg-cream'}`}
+      role="banner"
+    >
+      <nav className="max-w-container mx-auto px-5 sm:px-8 h-16 flex items-center justify-between" aria-label="Primary">
+        <Link to="/" aria-label="SILLIVE home">
+          <Logo size="md" theme="light" />
+        </Link>
+
+        <ul className="hidden md:flex items-center gap-8">
+          {NAV.map(item => (
+            <li key={item.to}>
+              <NavLink
+                to={item.to}
+                end={item.to === '/'}
+                className={({ isActive }) =>
+                  `text-sm font-medium transition-colors ${isActive ? 'text-forest' : 'text-ink hover:text-forest'}`
+                }
+              >
+                {item.label}
+              </NavLink>
+            </li>
           ))}
-          <Link to="/contact"
-            className="bg-teal-600 hover:bg-teal-500 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors">
-            Book Demo
-          </Link>
+        </ul>
+
+        <div className="hidden md:flex items-center gap-3">
+          <a href={APP_URL} className="text-sm font-medium text-forest hover:text-forest-700">Sign in</a>
+          <a
+            href={APP_URL}
+            className="bg-forest text-cream text-sm font-medium px-4 py-2 rounded-lg hover:bg-forest-700 transition-colors"
+          >
+            Start Free Trial
+          </a>
         </div>
-        <button onClick={() => setOpen(!open)} className="md:hidden text-slate-400 p-2">
-          <div className="w-5 h-4 flex flex-col justify-between">
-            <span className={`block h-0.5 bg-current transition-all origin-center ${open ? 'rotate-45 translate-y-2' : ''}`}/>
-            <span className={`block h-0.5 bg-current transition-all ${open ? 'opacity-0' : ''}`}/>
-            <span className={`block h-0.5 bg-current transition-all origin-center ${open ? '-rotate-45 -translate-y-2' : ''}`}/>
-          </div>
+
+        <button
+          className="md:hidden p-2 -mr-2"
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
+          onClick={() => setOpen(v => !v)}
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" stroke="#1B4332" strokeWidth="2" fill="none" aria-hidden="true">
+            {open
+              ? <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round"/>
+              : <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round"/>}
+          </svg>
         </button>
-      </div>
-      <AnimatePresence>
-        {open && (
-          <motion.div initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            className="md:hidden overflow-hidden bg-slate-950 border-b border-white/5">
-            <div className="px-6 py-4 flex flex-col gap-4">
-              {links.map(l => (
-                <Link key={l.to} to={l.to} onClick={() => setOpen(false)}
-                  className="text-slate-300 hover:text-white text-sm py-1">{l.label}</Link>
-              ))}
-              <Link to="/contact" onClick={() => setOpen(false)}
-                className="bg-teal-600 text-white text-sm font-medium px-4 py-2.5 rounded-lg text-center mt-1">
-                Book Demo
-              </Link>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.nav>
+      </nav>
+
+      {open && (
+        <div className="md:hidden border-t border-line bg-cream">
+          <ul className="px-5 py-4 flex flex-col gap-4">
+            {NAV.map(item => (
+              <li key={item.to}>
+                <NavLink to={item.to} end={item.to === '/'} onClick={closeMenu} className="block py-1 text-base text-ink">
+                  {item.label}
+                </NavLink>
+              </li>
+            ))}
+            <li className="pt-2 border-t border-line">
+              <a href={APP_URL} onClick={closeMenu} className="block bg-forest text-cream text-center font-medium px-4 py-2.5 rounded-lg">
+                Start Free Trial
+              </a>
+            </li>
+          </ul>
+        </div>
+      )}
+    </header>
   )
 }

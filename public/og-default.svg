@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FAF8F4"/>
+      <stop offset="1" stop-color="#E2EBE2"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="80" y="80" width="80" height="80" rx="18" fill="#1B4332"/>
+  <path d="M95,120 L121,120 L134,90 L150,176 L168,98 L182,120 L210,120"
+    stroke="#FAF8F4" stroke-width="6" fill="none"
+    stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="190" y="140" font-family="Georgia, serif" font-size="56" font-weight="500" fill="#1B4332">SIL</text>
+  <text x="280" y="140" font-family="Georgia, serif" font-size="56" font-weight="700" fill="#D4821A">LIVE</text>
+
+  <text x="80" y="320" font-family="Georgia, serif" font-size="64" font-weight="500" fill="#1B4332" letter-spacing="-1">
+    Clinical plans that
+  </text>
+  <text x="80" y="395" font-family="Georgia, serif" font-size="64" font-weight="500" fill="#1B4332" letter-spacing="-1">
+    actually get implemented.
+  </text>
+  <text x="80" y="475" font-family="DM Sans, system-ui, sans-serif" font-size="28" fill="#222222">
+    Operations platform for NDIS SIL providers.
+  </text>
+
+  <line x1="80" y1="540" x2="1120" y2="540" stroke="#E6E1D7" stroke-width="2"/>
+  <text x="80" y="580" font-family="DM Sans, system-ui, sans-serif" font-size="22" fill="#5A5A5A">
+    Built inside Caring Hands SA · Adelaide, South Australia
+  </text>
+  <text x="1120" y="580" text-anchor="end" font-family="DM Sans, system-ui, sans-serif" font-size="22" fill="#1B4332" font-weight="500">
+    sillive.com.au
+  </text>
+</svg>
