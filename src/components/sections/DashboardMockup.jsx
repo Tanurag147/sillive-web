@@ -32,7 +32,7 @@ export default function DashboardMockup() {
         <div className="p-5 space-y-4 bg-cream">
           <div>
             <p className="text-[11px] uppercase tracking-wider text-muted">Morning summary · Wed 11 May</p>
-            <h3 className="text-lg font-display text-forest mt-1">Good morning, Tanurag</h3>
+            <h3 className="text-lg font-display text-forest mt-1">Good morning, Alex</h3>
           </div>
 
           <motion.div
@@ -87,7 +87,7 @@ export default function DashboardMockup() {
             className={cardBase}
           >
             <div className="flex items-center justify-between mb-2">
-              <p className="text-xs text-muted">Goal: Independent meal prep · Aizezi</p>
+              <p className="text-xs text-muted">Goal: Independent meal prep · Emma</p>
               <span className="text-[10px] text-forest font-medium">7 / 10 shifts</span>
             </div>
             <div className="h-1.5 bg-line rounded-full overflow-hidden">

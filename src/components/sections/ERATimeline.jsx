@@ -48,7 +48,7 @@ const STEPS = [
             <span className="text-forest font-medium">Independent meal prep</span>
             <span className="text-sage-600">✓ delivered</span>
           </div>
-          <div className="text-muted text-[11px] mt-1">Sarah · 18:42 · "Aizezi made pasta with verbal prompts only."</div>
+          <div className="text-muted text-[11px] mt-1">Sarah · 18:42 · "Emma made pasta with verbal prompts only."</div>
         </div>
         <div className="bg-sage/20 border border-sage rounded p-3 text-forest text-[11px]">
           Audit evidence created automatically · linked to BSP §4.2
