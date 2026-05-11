@@ -81,7 +81,7 @@ The whole sequence has to run, every cycle, for every participant. That's what s
 
 The morning of a Tuesday in March 2026, Caring Hands SA. I open my morning summary email at 6:14am over coffee.
 
-> Aizezi · Quiet overnight, settled by 22:40. Engagement: cooking video with Lily. Goals supported: 2 of 3 (meal prep ✓, social outing ✓, hydration check missed). Support delivered: 1:1 ratio held. **Needs your attention: GP follow-up form due Friday.**
+> Emma · Quiet overnight, settled by 22:40. Engagement: cooking video with Lily. Goals supported: 2 of 3 (meal prep ✓, social outing ✓, hydration check missed). Support delivered: 1:1 ratio held. **Needs your attention: GP follow-up form due Friday.**
 
 That paragraph is built from an Apply step that happened at 06:00, drawing on Routes that happened at 22:00 and 06:00, drawing on Extracts that happened weeks ago when the BSP and OT reports were processed.
 

@@ -43,7 +43,7 @@ When a new clinical document arrives — BSP, OT report, speech pathology plan �
 
 Each action is then **routed to the shift briefing** for the relevant participant. So when Sarah arrives for her 6am shift, she opens the briefing on her phone and sees:
 
-> **For Aizezi today:**
+> **For Emma today:**
 > - Verbal prompts only during meal prep — source: BSP §4.2
 > - Sensory check before 7pm if using lounge — source: OT recs §3
 > - Practice asking for help with shoes — source: speech path §2.1
